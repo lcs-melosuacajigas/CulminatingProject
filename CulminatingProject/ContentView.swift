@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var taskList = [
+    "English essay",
+    "Wash dishes"
+    ]
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("New Task")
+            List {
+                ForEach(taskList, id: \.self) { currentItem in
+                    Text(currentItem)
+                    
+                }
+            }
+        }
     }
 }
 
