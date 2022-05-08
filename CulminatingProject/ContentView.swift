@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var taskList = ["", "Wash dishes"]
+    @State var taskList : [String] = []
     @State var input = ""
     var body: some View {
         VStack {
-            TextField("New task", text: $input)
+            HStack {
+                TextField("New task", text: $input)
+                Button(action: {
+                    taskList.append(input)
+                    input = ""
+                }, label: {Text("Save")})
+            }
+            
             List {
                 ForEach(taskList, id: \.self) { currentItem in
                     Text(currentItem)
