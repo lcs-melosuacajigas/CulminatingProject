@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var taskList = [
-    "English essay",
-    "Wash dishes"
-    ]
+    @State var taskList = ["", "Wash dishes"]
+    @State var input = ""
     var body: some View {
         VStack {
-            Text("New Task")
+            TextField("New task", text: $input)
             List {
                 ForEach(taskList, id: \.self) { currentItem in
                     Text(currentItem)
