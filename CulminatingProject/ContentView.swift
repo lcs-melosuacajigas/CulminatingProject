@@ -4,10 +4,12 @@
 //
 //  Created by Mateo Elosua on 2022-05-08.
 //
-
+// note.text
+// clock
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.scenePhase) var scenePhase
     @State var taskList : [String] = []
     @State var input = ""
     var body: some View {
@@ -26,6 +28,9 @@ struct ContentView: View {
                     
                 }
             }
+        }
+        .onChange(of: scenePhase) { newPhase in
+            
         }
     }
 }

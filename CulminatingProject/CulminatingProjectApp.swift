@@ -11,7 +11,18 @@ import SwiftUI
 struct CulminatingProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                TabView {
+                    ContentView()
+                        .tabItem {
+                            Image(systemName: "note.text")
+                        }
+                    TimeView()
+                        .tabItem {
+                            Image(systemName: "clock")
+                        }
+                }
+            }
         }
     }
 }
