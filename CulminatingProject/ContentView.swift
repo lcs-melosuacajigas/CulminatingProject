@@ -30,7 +30,9 @@ struct ContentView: View {
             }
         }
         .onChange(of: scenePhase) { newPhase in
-            
+            if newPhase == .background {
+                
+            }
         }
     }
 }
